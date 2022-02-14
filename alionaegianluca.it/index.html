@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Aliona & Gianluca</title>
+  </head>
+  <body>
+    <div id="app" data-scroll-container>
+
+      <div class="absolute h-screen w-full z-20" data-scroll-section>
+        <div class="absolute inset-0 w-full h-full z-20">
+          <div class="absolute w-[24vw] right-[-10vw] top-[-6vw]" data-scroll data-scroll-speed="3">
+            <img src="/images/eucalyptus-1.png" class="w-full">
+          </div>
+          <div class="absolute w-[14vw] left-0 top-[0.5vw]" data-scroll data-scroll-speed="2">
+            <img src="/images/eucalyptus-2.png" class="w-full">
+          </div>
+          <div class="absolute w-[20vw] right-[-1vw] bottom-[-5vw]" data-scroll data-scroll-speed="0.5">
+            <img src="/images/eucalyptus-3.png" class="w-full">
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero -->
+      <div class="w-full h-screen p-6 lg:p-20 relative" data-scroll-section>
+        <!-- Hero / Decorations -->
+        
+
+        <div class="relative w-full h-full flex justify-center items-center" data-scroll data-scroll-speed="-4">
+          <!-- Hero / Bg -->
+          <div class="absolute w-full h-full bg-dove z-0">
+            <div class="relative w-full h-full opacity-40 overflow-hidden">
+              <img src="/images/intro-bg.jpg" class="w-full h-full object-cover relative z-0">
+              <img src="/images/eucalyptus-2.png" class="h-[120vh] opacity-25 left-[2vw] top-[-5vw] absolute z-10 transform rotate-12" data-scroll data-scroll-speed="-4">
+            </div>
+          </div>
+
+
+          <!-- Hero / Text -->
+          <div class="relative">
+            <div class="font-regular italic text-xxl lg:text-[5.8vw] relative z-10">
+              Aliona & Gianluca
+            </div>
+            <div class="flex items-center justify-center">
+              <div class="w-36 h-[1px] bg-green"></div>
+              <div class="mx-10 text-l leading-none">
+                25/06/2022
+              </div>
+              <div class="w-36 h-[1px] bg-green"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Intro -->
+      <div class="w-full block bg-white" data-scroll-section>
+        <div class="container py-12 lg:py-24">
+          <div class="lg:px-[4vw]">
+            <div class="text-xl xl:text-xxl leading-[1.375]">
+              <div data-lines><span data-populate="intro.greeting">Ciao</span> <span class="font-bold inline-block" data-populate="route.name">Mario</span>,</div>
+              <div data-populate="intro.row1" data-lines>abbiamo il piacere di invitarti al nostro matrimonio che si terrà il giorno sabato 25 giugno 2022.</div>
+              <div data-populate="intro.row2" data-lines>La cerimonia si terrà presso la <br/><strong>Chiesa di San Giorgio di Chirignago</strong> (Venezia) alle ore <strong>15.30</strong>.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative w-full h-0 pb-[32%] overflow-hidden mt-12 lg:mt-24">
+          <img src="/images/eucalyptus-fullwidth.jpg" class="w-full h-[120%] absolute inset-0 object-cover" data-scroll data-scroll-speed="-4">
+        </div>
+      </div>
+
+      <!-- Invitation -->
+      <div class="container mt-32 relative h-[300vh]" id="invitation-sticky-target" data-scroll-section data-scroll data-scroll-id="invitation">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 top-0" data-scroll data-scroll-sticky data-scroll-target="#invitation-sticky-target">
+          <div>
+            <div>
+              <p class="text-l pt-24">
+                Siamo lieti di avervi ospiti per la serata che si terrà presso l’agriturismo Al Segnavento di Zelarino (Venezia).
+              </p>
+              <p class="mt-12">
+                Ad attendervi ci sarà un ricco buffet iniziale composto da diversi assaggi di produzioni locali. A seguire una ricca cena proposta dall’agriturismo con squisite pietanze de casa e ghesboro altre bueae intanto scrivo a caso per riempire lo spazio. <br><br>
+                Clicca qui per comunicarci eventuali allergie o intolleranze alimentari.
+              </p>
+            </div>
+          </div>
+          <div class="relative block overflow-hidden">
+            <div class="scrolling-div w-full">
+              <div class="w-full relative z-0">
+                <img src="/images/segnavento-1.webp" class="w-full h-screen object-cover">
+              </div>
+              <div class="w-full absolute top-0 transform translate-y-full z-10">
+                <img src="/images/segnavento-2.webp" class="w-full h-screen object-cover">
+              </div>
+              <div class="w-full absolute top-0 transform translate-y-full z-20">
+                <img src="/images/segnavento-3.webp" class="w-full h-screen object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

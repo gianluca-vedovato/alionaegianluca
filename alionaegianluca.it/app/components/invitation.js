@@ -18,6 +18,7 @@ export default ({ scroller }) => {
   }
   
   scroller.onScroll(({ currentElements }) => {
+    if (window.innerWidth < 1024) return
     if (!currentElements.invitation) {
       gsap.ticker.remove(() => onProgress())
       return

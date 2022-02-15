@@ -1,5 +1,5 @@
 export default {
-  greeting: 'Ciao',
-  row1: 'abbiamo il piacere di invitarti al nostro matrimonio che si terrà il giorno sabato 25 giugno 2022.',
-  row2: 'La cerimonia si terrà presso la <br/><strong>Chiesa di San Giorgio di Chirignago</strong> (Venezia) alle ore <strong>15.30</strong>.'
+  title: 'Siamo lieti di avervi ospiti per la serata che si terrà presso l’agriturismo Al Segnavento di Zelarino (Venezia).',
+  text: 'Ad attendervi ci sarà un ricco buffet iniziale composto da diversi assaggi di produzioni locali. A seguire una ricca cena proposta dall’agriturismo con squisite pietanze de casa e ghesboro altre bueae intanto scrivo a caso per riempire lo spazio.',
+  showOnMap: 'Mostramelo sulla mappa',
 }

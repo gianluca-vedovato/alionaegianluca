@@ -24,17 +24,6 @@ body {
   @apply bg-green text-white;
 }
 
-*[data-lines] .line {
-  transition-delay: var(--delay);
-  @apply whitespace-nowrap transition-all duration-1800 ease-in-out;
-}
-
-*[data-lines].is-inview .line {
-  @apply opacity-100 transform translate-y-0;
-}
-
-
-
 /*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
 
 html.has-scroll-smooth {
@@ -123,4 +112,96 @@ html.has-scroll-dragging {
 [data-scroll-direction="horizontal"] .c-scrollbar_thumb {
 	right: auto;
 	bottom: 0;
+}
+
+
+/* Radio button */
+
+.radio-button {
+  @apply flex items-center text-s relative;
+}
+
+.radio-button input {
+  all: unset;
+  @apply absolute inset-0 w-8 h-full opacity-0 z-40 cursor-pointer;
+}
+
+.radio-button .fake-radio {
+  @apply w-8 h-8 rounded-full border border-white transition-all duration-500 ease-power-out flex justify-center items-center bg-white;
+}
+
+.radio-button .fake-radio span {
+  @apply w-4 h-4 rounded-full bg-green transform scale-0 transition-all duration-500 ease-power-out opacity-0;
+}
+
+.radio-button input:checked + .fake-radio {
+  @apply border-green;
+}
+
+.radio-button input:checked + .fake-radio span {
+  @apply opacity-100 scale-100;
+}
+
+.radio-button label {
+  @apply relative ml-4 cursor-pointer;
+}
+
+.radio-button .radio-note {
+  transition-delay: 0ms;
+  @apply opacity-0 pointer-events-none duration-200 ease-power-out transform scale-0 ml-4;
+}
+
+.radio-button input:checked ~ .radio-note {
+  @apply opacity-100 scale-100 delay-300;
+}
+
+
+/* Main button */
+
+.main-button {
+  @apply text-m py-4 px-8 leading-none border-2 border-green transition-all duration-700 ease-power-out;
+}
+
+.main-button:hover {
+  @apply bg-white/60;
+}
+
+
+/* Inview Animations */
+*[data-lines] .line {
+  transition-delay: var(--delay);
+  @apply whitespace-nowrap transition-all duration-1800 ease-in-out;
+}
+
+*[data-lines].is-inview .line {
+  @apply opacity-100 transform translate-y-0;
+}
+
+*[data-reveal=image],
+*[data-reveal=image] div {
+  @apply transition-all duration-1800 ease-power-out;
+}
+
+*[data-reveal=image] {
+  clip-path: inset(0% 0% 100% 0%);
+}
+
+*[data-reveal=image] div {
+  @apply transform scale-125;
+}
+
+*[data-reveal=image].is-inview {
+  clip-path: inset(0% 0% 0% 0%);
+}
+
+*[data-reveal=image].is-inview div {
+  @apply scale-100;
+}
+
+*[data-fade] {
+  @apply opacity-0 transform translate-y-20 transition-all duration-1800 ease-in-out;
+}
+
+*[data-fade].is-inview {
+  @apply opacity-100 translate-y-0;
 }

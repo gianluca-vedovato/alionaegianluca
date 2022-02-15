@@ -1,10 +1,14 @@
 import Scroller from './classes/scroller'
 import LinesReveal from './classes/linesReveal'
 import invitation from './components/invitation'
+import form from './components/form'
 import messages from './dataset/messages'
+import { collection, doc, getDoc } from 'firebase/firestore'
+import { db } from './utils/firebase'
 
 const toInit = {
-  invitation
+  invitation,
+  form
 }
 
 class App {
@@ -13,7 +17,21 @@ class App {
     this.init ()
   }
 
+  async getFirestoreRef () {
+    this.id = this.getUrlParam('id')
+    if (!this.id) return
+    const confirmationsRef = collection(db, 'confirmations_test')
+    const docRef = doc(confirmationsRef, this.id)
+    const snap = await getDoc(docRef)
+    this.data = snap.data()
+
+    this.name = this.data.displayName
+    this.type = this.data.type
+    this.docRef = docRef
+  }
+
   async init () {
+    await this.getFirestoreRef()
     await this.populate()
 
     document.querySelectorAll('[data-lines]')
@@ -43,7 +61,7 @@ class App {
     contents.forEach(content => {
       const keys = content.getAttribute('data-populate').split('.')
       const message = keys[0] === 'route'
-        ? this.getUrlParam(keys[1]) || ''
+        ? this.name || ''
         : keys.reduce((acc, curr) => {
             return acc[curr]
           }, messages[this.locale])
@@ -52,6 +70,12 @@ class App {
         content.parentNode.removeChild(content)
         return
       }
+
+      if (keys[keys.length - 1] === 'placeholder') {
+        content.placeholder = message
+        return
+      }
+
       content.innerHTML = message
     })
   }

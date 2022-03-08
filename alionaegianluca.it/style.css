@@ -186,11 +186,17 @@ html.has-scroll-dragging {
   clip-path: inset(0% 0% 100% 0%);
 }
 
+*.from-center[data-reveal=image],
+*[data-reveal=clip] {
+  clip-path: inset(50% 50% 50% 50%);
+}
+
 *[data-reveal=image] div {
   @apply transform scale-125;
 }
 
-*[data-reveal=image].is-inview {
+*[data-reveal=image].is-inview,
+*[data-reveal=clip].is-inview {
   clip-path: inset(0% 0% 0% 0%);
 }
 
@@ -199,7 +205,7 @@ html.has-scroll-dragging {
 }
 
 *[data-fade] {
-  @apply opacity-0 transform translate-y-20 transition-all duration-1800 ease-in-out;
+  @apply opacity-0 transform translate-y-20 transition-all duration-2500 ease-in-out;
 }
 
 *[data-fade].is-inview {

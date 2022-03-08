@@ -1,13 +1,11 @@
 import Scroller from './classes/scroller'
 import LinesReveal from './classes/linesReveal'
-import invitation from './components/invitation'
 import form from './components/form'
 import messages from './dataset/messages'
 import { collection, doc, getDoc } from 'firebase/firestore'
 import { db } from './utils/firebase'
 
 const toInit = {
-  invitation,
   form
 }
 
@@ -17,7 +15,7 @@ class App {
     this.init ()
   }
 
-  async getFirestoreRef () {
+  async getFirestoreRef () {    
     this.id = this.getUrlParam('id')
     if (!this.id) return
     const confirmationsRef = collection(db, 'confirmations_test')
@@ -26,12 +24,22 @@ class App {
     this.data = snap.data()
 
     this.name = this.data.displayName
-    this.type = this.data.type
+    this.type = this.data.type || 'partial'
     this.docRef = docRef
   }
 
   async init () {
+
     await this.getFirestoreRef()
+
+    const toRemove = this.type === 'full'
+      ? document.querySelectorAll('.invitation-full')
+      : document.querySelectorAll('.invitation-partial')
+    
+    toRemove.forEach(el => {
+      el.parentNode.removeChild(el)
+    })
+
     await this.populate()
 
     document.querySelectorAll('[data-lines]')

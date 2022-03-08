@@ -42,16 +42,17 @@
 
 
           <!-- Hero / Text -->
-          <div class="relative flex flex-col items-center">
-            <div class="font-regular italic text-l lg:text-[5.8vw] relative z-10">
-              Aliona & Gianluca
+          <div class="relative flex flex-col items-center w-full h-full justify-center">
+            <div class="relative z-10 w-[90%] max-w-[1200px]">
+              <img src="/images/alionaegianluca.png" alt="" class="hidden md:block">
+              <img src="/images/alionaegianluca_mobile.png" alt="" class="block md:hidden">
             </div>
-            <div class="flex items-center justify-center">
-              <div class="w-16 lg:w-36 h-[1px] bg-green"></div>
-              <div class="mx-10 text-m lg:text-l leading-none">
+            <div class="flex items-center justify-center absolute bottom-6">
+              <div class="w-16 lg:w-24 h-[1px] bg-green"></div>
+              <div class="mx-10 text-m lg:text-[1.5rem] leading-none">
                 25/06/2022
               </div>
-              <div class="w-16 lg:w-36 h-[1px] bg-green"></div>
+              <div class="w-16 lg:w-24 h-[1px] bg-green"></div>
             </div>
           </div>
         </div>
@@ -69,7 +70,7 @@
           </div>
         </div>
 
-        <div class="relative w-full h-0 pb-[56%] lg:pb-[32%] overflow-hidden mt-12 lg:mt-24" data-reveal="image" data-scroll>
+        <div class="relative w-full h-0 pb-[56%] lg:pb-[32%] overflow-hidden mt-12 lg:mt-24 from-center" data-reveal="image" data-scroll>
           <div class="w-full h-[120%] absolute top-0 left-0">
             <img src="/images/eucalyptus-fullwidth.jpg" class="w-full h-full relative inset-0 object-cover" data-scroll data-scroll-speed="-4">
           </div>
@@ -77,17 +78,28 @@
       </div>
 
       <!-- Invitation -->
-      <div class="container my-16 lg:my-32 relative lg:h-[200vh]" id="invitation-sticky-target" data-scroll-section data-scroll data-scroll-id="invitation" data-scroll-offset="20%, -20%">
-        <div class="top-0 lg:min-h-screen lg:flex items-center" data-scroll data-scroll-sticky data-scroll-target="#invitation-sticky-target">
+      <div class="container my-16 lg:my-32 relative" data-scroll-section>
+        <div class="top-0 lg:min-h-screen lg:flex items-center" data-scroll>
           <div class="grid grid-cols-1 lg:grid-cols-5 gap-24 ">
             <div class="lg:col-span-2 lg:flex flex-col justify-between">
-              <div>
-                <p class="text-l" data-populate="invitation.title" data-lines>
+              <div class="invitation-full">
+                <p class="text-l" data-populate="invitation.full.title" data-lines>
                   Siamo lieti di avervi ospiti per la serata che si terrà presso l’agriturismo Al Segnavento di Zelarino (Venezia).
                 </p>
-                <p class="mt-12" data-populate="invitation.text" data-lines>
-                  Ad attendervi ci sarà un ricco buffet iniziale composto da diversi assaggi di produzioni locali. A seguire una ricca cena proposta dall’agriturismo con squisite pietanze de casa e ghesboro altre bueae intanto scrivo a caso per riempire lo spazio. <br><br>
-                  Clicca qui per comunicarci eventuali allergie o intolleranze alimentari.
+                <p class="mt-12" data-populate="invitation.full.text" data-lines>
+                  Ad attendervi ci sarà un ricco buffet iniziale composto da diversi assaggi di produzioni locali. A seguire una ricca cena proposta dall’agriturismo con squisite pietanze de casa e ghesboro altre bueae intanto scrivo a caso per riempire lo spazio.
+                </p>
+                <p class="mt-12" data-lines>
+                 <span data-populate="invitation.clickHere"></span>
+                 <span data-populate="invitation.allergens"></span>
+                </p>
+              </div>
+              <div class="invitation-partial">
+                <p class="text-l" data-populate="invitation.partial.title" data-lines>
+                  Siamo lieti di avervi ospiti per la serata che si terrà presso l’agriturismo Al Segnavento di Zelarino (Venezia).
+                </p>
+                <p class="mt-12" data-populate="invitation.partial.text" data-lines>
+                  Ad attendervi ci sarà un ricco buffet iniziale composto da diversi assaggi di produzioni locali. A seguire una ricca cena proposta dall’agriturismo con squisite pietanze de casa e ghesboro altre bueae intanto scrivo a caso per riempire lo spazio.
                 </p>
               </div>
               <div class="border-black border-t pt-6 mt-12" data-fade data-scroll>
@@ -100,15 +112,9 @@
               </div>
             </div>
             <div class="relative inline-block lg:col-span-3 overflow-hidden">
-              <div class="scrolling-div w-full h-0 pb-[110%] relative">
+              <div class="scrolling-div w-full h-0 pb-[110%] relative"  data-reveal="image" data-scroll>
                 <div class="w-full h-full absolute top-0 z-0">
-                  <img src="/images/segnavento-1.webp" class="w-full h-full object-cover">
-                </div>
-                <div class="w-full h-full absolute top-0 transform translate-y-full z-10">
-                  <img src="/images/segnavento-2.webp" class="w-full h-full object-cover">
-                </div>
-                <div class="w-full h-full absolute top-0 transform translate-y-full z-20">
-                  <img src="/images/segnavento-3.webp" class="w-full h-full object-cover">
+                  <img src="/images/segnavento-1.webp" class="w-full h-full object-cover" data-scroll data-scroll-speed="-2">
                 </div>
               </div>
             </div>
@@ -117,10 +123,10 @@
       </div>
 
       <!-- Confirmation -->
-      <div class="bg-dove py-12 lg:py-24" data-scroll-section>
+      <div class="bg-dove py-12 lg:py-24 from-center" data-scroll-section data-reveal="clip" data-scroll>
         <div class="container">
-          <h2 class="font-bold text-l lg:text-xl" data-populate="confirmation.title">Confermi la tua presenza?</h2>
-          <form id="main-form">
+          <h2 class="font-bold text-l lg:text-xl" data-lines data-populate="confirmation.title">Confermi la tua presenza?</h2>
+          <form id="main-form" data-fade data-scroll>
             <div class="flex flex-col lg:flex-row mt-14">
               <div>
                 <div class="text-m font-bold mb-2.5" data-populate="confirmation.confirm">Confermi?</div>
@@ -145,11 +151,11 @@
               <div class="flex items-center lg:ml-20 mt-12 lg:mt-0">
                 <div>
                   <label for="confirm_adults" class="relative block text-m font-bold mb-2.5" data-populate="confirmation.adults">Adulti</label>
-                  <input type="text" name="adults" id="confirm_adults" class="text-m border-2 border-white transition-all duration-500 ease-power-out focus:border-green outline-none p-2 w-24">
+                  <input type="number" name="adults" id="confirm_adults" class="text-m border-2 border-white transition-all duration-500 ease-power-out focus:border-green outline-none p-2 w-24">
                 </div>
                 <div class="ml-12">
                   <label for="confirm_children" class="relative block text-m font-bold mb-2.5" data-populate="confirmation.children">Bambini</label>
-                  <input type="text" name="children" id="confirm_children" class="text-m border-2 border-white transition-all duration-500 ease-power-out focus:border-green outline-none p-2 w-24">
+                  <input type="number" name="children" id="confirm_children" class="text-m border-2 border-white transition-all duration-500 ease-power-out focus:border-green outline-none p-2 w-24">
                 </div>
               </div>
             </div>
@@ -166,7 +172,47 @@
         </div>
       </div>
 
-      <div class="container py-96"></div>
+      <!-- Outro -->
+      <div class="container" data-scroll data-scroll-section>
+        <div class="py-16 lg:py-30">
+          <div class="flex justify-between w-full">
+            <div>
+              <div class="font-bold text-[1.5rem]">
+                Cerimonia
+              </div>
+              <div class="text-m flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 mr-2" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm6-1.8C18 6.57 15.35 4 12 4s-6 2.57-6 6.2c0 2.34 1.95 5.44 6 9.14 4.05-3.7 6-6.8 6-9.14zM12 2c4.2 0 8 3.22 8 8.2 0 3.32-2.67 7.25-8 11.8-5.33-4.55-8-8.48-8-11.8C4 5.22 7.8 2 12 2z"/></svg>
+                <span>Chiesa San Giorgio di Chirignago (VE)</span>
+              </div>
+              <div class="text-m flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 mr-2" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>Alle ore 15.30</span>
+              </div>
+              <a href="https://goo.gl/maps/196iKMu6TDMbCxu17" target="_blank" class="text-m text-green">Dove si trova?</a>
+            </div>
+            <div>
+              <div class="font-bold text-[1.5rem] invitation-full">
+                Ricevimento
+              </div>
+              <div class="font-bold text-[1.5rem] invitation-partial">
+                Taglio della torta
+              </div>
+              <div class="text-m flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 mr-2" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm6-1.8C18 6.57 15.35 4 12 4s-6 2.57-6 6.2c0 2.34 1.95 5.44 6 9.14 4.05-3.7 6-6.8 6-9.14zM12 2c4.2 0 8 3.22 8 8.2 0 3.32-2.67 7.25-8 11.8-5.33-4.55-8-8.48-8-11.8C4 5.22 7.8 2 12 2z"/></svg>
+                <span>Agriturismo Al Segnavento - Zelarino (VE)</span>
+              </div>
+              <div class="text-m flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 mr-2" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span class="invitation-full">In seguito alla cerimonia</span>
+                <span class="invitation-partial">Alle ore 21.30</span>
+              </div>
+              <a href="https://goo.gl/maps/WLV6BwuoVhop642cA" target="_blank" class="text-m text-green">Dove si trova?</a>
+            </div>
+          </div>
+        </div>
+
+            
+      </div>
     </div>
     <script type="module" src="/main.js"></script>
   </body>

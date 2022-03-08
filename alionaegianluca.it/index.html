@@ -43,16 +43,21 @@
 
           <!-- Hero / Text -->
           <div class="relative flex flex-col items-center w-full h-full justify-center">
-            <div class="relative z-10 w-[90%] max-w-[1200px]">
-              <img src="/images/alionaegianluca.png" alt="" class="hidden md:block">
-              <img src="/images/alionaegianluca_mobile.png" alt="" class="block md:hidden">
-            </div>
-            <div class="flex items-center justify-center absolute bottom-6">
-              <div class="w-16 lg:w-24 h-[1px] bg-green"></div>
-              <div class="mx-10 text-m lg:text-[1.5rem] leading-none">
-                25/06/2022
+            <div class="relative z-10 w-[90%] max-w-[1200px] mix-blend-multiply">
+              <picture >
+                <source type="image/webp" srcset="/images/alionaegianluca.webp" media="(min-width: 1024px)">
+                <source type="image/jpeg" srcset="/images/alionaegianluca.jpg" media="(min-width: 1024px)">
+                <source type="image/webp" srcset="/images/alionaegianluca_mobile.webp" media="(min-width: 0px)">
+                <source type="image/jpeg" srcset="/images/alionaegianluca_mobile.jpg" media="(min-width: 0px)">
+                <img src="/images/alionaegianluca_mobile.jpg" alt="" >
+              </picture>
+              <div class="flex items-center justify-center absolute pt-4 w-full">
+                <!-- <div class="w-8 lg:w-24 h-[1px] bg-green"></div> -->
+                <div class="mx-2 text-m lg:text-[1.5rem] leading-none">
+                  25/06/2022
+                </div>
+                <!-- <div class="w-8 lg:w-24 h-[1px] bg-green"></div> -->
               </div>
-              <div class="w-16 lg:w-24 h-[1px] bg-green"></div>
             </div>
           </div>
         </div>

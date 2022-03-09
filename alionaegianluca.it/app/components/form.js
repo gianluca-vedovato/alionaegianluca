@@ -30,42 +30,39 @@ export default ({ scroller, id, data: { adults, children, confirm, notes, displa
 
     form.querySelector('.main-button').classList.add('loading')
 
-    setTimeout(() => {
-      form.querySelector('.main-button').classList.add('loading')
+    form.querySelector('.main-button').classList.add('loading')
 
-      const toShow = confirmation === '1'
-        ? document.querySelector('.invitation-confirmed')
-        : document.querySelector('.invitation-not-confirmed')
-      
-      scroller.scrollTo(toShow)
-      gsap.timeline()
-        .to('.invitation-form', { opacity: 0, y: 20, pointerEvents: 'none', ease: 'power4.out', duration: 1.2 })
-        .to(toShow, { autoAlpha: 1, y: 0,  ease: 'power4.out', duration: 1.2 })
-    }, 4000)
-    // try {
-    //   await addDoc(writes, {
-    //     createdAt: serverTimestamp(),
-    //     adults,
-    //     children,
-    //     notes,
-    //     confirmation: confirmation === '1' ? 'Sì' : 'No',
-    //     displayName,
-    //     id
-    //   })
-  
-    //   await setDoc(docRef, {
-    //     confirmation,
-    //     notes,
-    //     adults,
-    //     children
-    //   }, {
-    //     merge: true
-    //   })
-    // } catch (e) {
-    //   console.error(e)
-    // }
-
+    const toShow = confirmation === '1'
+      ? document.querySelector('.invitation-confirmed')
+      : document.querySelector('.invitation-not-confirmed')
     
+      try {
+        await addDoc(writes, {
+          createdAt: serverTimestamp(),
+          adults,
+          children,
+          notes,
+          confirmation: confirmation === '1' ? 'Sì' : 'No',
+          displayName,
+          id
+        })
+        
+        await setDoc(docRef, {
+          confirmation,
+          notes,
+          adults,
+          children
+        }, {
+          merge: true
+        })
+      } catch (e) {
+        console.error(e)
+      }
+      
+    scroller.scrollTo(toShow)
+    gsap.timeline()
+      .to('.invitation-form', { opacity: 0, y: 20, pointerEvents: 'none', ease: 'power4.out', duration: 1.2 })
+      .to(toShow, { autoAlpha: 1, y: 0,  ease: 'power4.out', duration: 1.2 })
 
     return false
   })

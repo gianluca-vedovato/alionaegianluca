@@ -13,7 +13,7 @@
     <div id="app" data-scroll-container>
 
       <div class="absolute h-screen w-full z-20 pointer-events-none" data-scroll-section>
-        <div class="absolute inset-0 w-full h-full z-20">
+        <div class="absolute inset-0 w-full h-full z-20" data-scroll data-fade-head>
           <div class="absolute w-[36vw] lg:w-[24vw] right-[-10vw] top-[-6vw]" data-scroll data-scroll-speed="3">
             <img src="/images/eucalyptus-1.png" class="w-full">
           </div>
@@ -31,7 +31,7 @@
         <!-- Hero / Decorations -->
         
 
-        <div class="relative w-full h-full flex justify-center items-center" data-scroll data-scroll-speed="-4" data-fade data-fade-slow>
+        <div class="relative w-full h-full flex justify-center items-center" data-scroll data-scroll-speed="-4">
           <!-- Hero / Bg -->
           <div class="absolute w-full h-full bg-dove z-0">
             <div class="relative w-full h-full opacity-40 overflow-hidden">
@@ -43,15 +43,15 @@
 
           <!-- Hero / Text -->
           <div class="relative flex flex-col items-center w-full h-full justify-center">
-            <div class="relative z-10 w-[90%] max-w-[1200px] mix-blend-multiply" data-scroll data-fade data-fade-slow>
-              <picture>
+            <div class="relative z-10 w-[90%] max-w-[1200px] mix-blend-multiply" data-scroll>
+              <picture data-scroll data-fade-head="200">
                 <source type="image/webp" srcset="/images/alionaegianluca.webp" media="(min-width: 1024px)">
                 <source type="image/jpeg" srcset="/images/alionaegianluca.jpg" media="(min-width: 1024px)">
                 <source type="image/webp" srcset="/images/alionaegianluca_mobile.webp" media="(min-width: 0px)">
                 <source type="image/jpeg" srcset="/images/alionaegianluca_mobile.jpg" media="(min-width: 0px)">
                 <img src="/images/alionaegianluca_mobile.jpg" alt="" >
               </picture>
-              <div class="flex flex-col items-center justify-center absolute pt-4 w-full">
+              <div class="flex flex-col items-center justify-center absolute pt-4 w-full" data-scroll data-fade-head="400">
                 <!-- <div class="w-8 lg:w-24 h-[1px] bg-green"></div> -->
                 <div class="mx-2 text-m lg:text-[1.5rem] leading-none">
                   25/06/2022
@@ -135,7 +135,7 @@
       <div class="relative bg-dove z-0" data-scroll-section>
         <div class="py-12 lg:py-24 from-center relative z-20" data-reveal="clip" data-scroll>
           <div class="container invitation-form relative ">
-            <h2 class="font-bold text-l lg:text-xl" data-lines data-populate="confirmation.title">Confermi la tua presenza?</h2>
+            <h2 class="font-bold text-l lg:text-xl" data-scroll data-fade data-populate="confirmation.title">Confermi la tua presenza?</h2>
             <form id="main-form" data-fade data-scroll>
               <div class="flex flex-col lg:flex-row mt-14">
                 <div>

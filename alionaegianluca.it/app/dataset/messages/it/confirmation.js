@@ -14,7 +14,7 @@ export default {
     button: 'Salva in calendario'
   },
   notConfirmed: {
-    title: ' Ci spiace che non sarete presenti 😢',
-    text: 'Grazie per averci comunicato che non potrete essere presenti. <br> Ci dispiace molto, speriamo di vederci presto 😊'
+    title: 'Che peccato! 😢',
+    text: 'Grazie comunque per averci comunicato che non sarete presenti. <br> Ci dispiace molto, speriamo di vederci presto 😊'
   }
 }

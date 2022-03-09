@@ -62,7 +62,6 @@ class App {
       
       Object.entries(toInit)
       .forEach(([component, initFunction]) => {
-        console.log(component)
         this[component] = initFunction(this)
       })
 

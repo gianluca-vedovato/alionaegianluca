@@ -2,7 +2,7 @@ import { addDoc, collection, setDoc, serverTimestamp } from "firebase/firestore"
 import { db } from "../utils/firebase"
 import { gsap } from 'gsap'
 
-export default ({ id, data: { adults, children, confirm, notes, displayName }, docRef }) => {
+export default ({ scroller, id, data: { adults, children, confirm, notes, displayName }, docRef }) => {
   const form = document.getElementById('main-form')
 
   form.querySelector('input[name=adults]').value = adults
@@ -33,10 +33,11 @@ export default ({ id, data: { adults, children, confirm, notes, displayName }, d
     setTimeout(() => {
       form.querySelector('.main-button').classList.add('loading')
 
-      const toShow = confirmation === 1
+      const toShow = confirmation === '1'
         ? document.querySelector('.invitation-confirmed')
         : document.querySelector('.invitation-not-confirmed')
       
+      scroller.scrollTo(toShow)
       gsap.timeline()
         .to('.invitation-form', { opacity: 0, y: 20, pointerEvents: 'none', ease: 'power4.out', duration: 1.2 })
         .to(toShow, { autoAlpha: 1, y: 0,  ease: 'power4.out', duration: 1.2 })

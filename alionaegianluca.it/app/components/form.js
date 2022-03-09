@@ -36,28 +36,28 @@ export default ({ scroller, id, data: { adults, children, confirm, notes, displa
       ? document.querySelector('.invitation-confirmed')
       : document.querySelector('.invitation-not-confirmed')
     
-    // try {
-    //   await addDoc(writes, {
-    //     createdAt: serverTimestamp(),
-    //     adults,
-    //     children,
-    //     notes,
-    //     confirmation: confirmation === '1' ? 'Sì' : 'No',
-    //     displayName,
-    //     id
-    //   })
+    try {
+      await addDoc(writes, {
+        createdAt: serverTimestamp(),
+        adults,
+        children,
+        notes,
+        confirmation: confirmation === '1' ? 'Sì' : 'No',
+        displayName,
+        id
+      })
       
-    //   await setDoc(docRef, {
-    //     confirmation,
-    //     notes,
-    //     adults,
-    //     children
-    //   }, {
-    //     merge: true
-    //   })
-    // } catch (e) {
-    //   console.error(e)
-    // }
+      await setDoc(docRef, {
+        confirmation,
+        notes,
+        adults,
+        children
+      }, {
+        merge: true
+      })
+    } catch (e) {
+      console.error(e)
+    }
       
     scroller.scrollTo(toShow, { offset: 120 })
     gsap.timeline()

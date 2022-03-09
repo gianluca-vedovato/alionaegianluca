@@ -182,25 +182,25 @@
           </div>
           <div class="absolute inset-0 w-full h-full flex justify-center items-center pointer-events-none z-10">
             <div class="container flex justify-center items-center flex-col text-center invitation-confirmed pointer-events-auto absolute inset-0">
-              <div class="text-[1.5rem] font-bold">
+              <div class="text-[1.5rem] font-bold" data-populate="confirmation.confirmed.title">
                 Conferma ricevuta
               </div>
-              <div class="text-m mt-2">
+              <div class="text-m mt-2" data-populate="confirmation.confirmed.text">
                 Grazie, abbiamo ricevuto la tua conferma correttamente. <br>
                 Clicca il pulsante qui sotto per salvare la data in calendario.
               </div>
-              <a class="main-button invitation-full mt-6" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Matrimonio+Aliona+e+Gianluca&details=Cerimonia+di+matrimonio+di+Aliona+e+Gianluca&location=Cerimonia%3A+Chiesa+San+Giorgio+di+Chirignago+-+Piazza+S.+Giorgio%2C+8%2C+30174+Venezia+VE%0ARicevimento%3A+Agriturismo+Al+Segnavento+-+Via+Gatta%2C+76C%2C+30174+Venezia+VE&dates=20220625T133000Z%2F20220626T000000Z" target="_blank">
+              <a class="main-button invitation-full mt-6" data-populate="confirmation.confirmed.button" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Matrimonio+Aliona+e+Gianluca&details=Cerimonia+di+matrimonio+di+Aliona+e+Gianluca&location=Cerimonia%3A+Chiesa+San+Giorgio+di+Chirignago+-+Piazza+S.+Giorgio%2C+8%2C+30174+Venezia+VE%0ARicevimento%3A+Agriturismo+Al+Segnavento+-+Via+Gatta%2C+76C%2C+30174+Venezia+VE&dates=20220625T133000Z%2F20220626T000000Z" target="_blank">
                 Salva in calendario
               </a>
-              <a class="main-button invitation-partial mt-6" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Matrimonio+Aliona+e+Gianluca&details=Taglio+della+torta+nuziale+e+festa+di+nozze&location=Cerimonia%3A+Chiesa+San+Giorgio+di+Chirignago+-+Piazza+S.+Giorgio%2C+8%2C+30174+Venezia+VE%0AFesta+di+nozze%3A+Agriturismo+Al+Segnavento+-+Via+Gatta%2C+76C%2C+30174+Venezia+VE&dates=20220625T193000Z%2F20220626T000000Z" target="_blank">
+              <a class="main-button invitation-partial mt-6" data-populate="confirmation.confirmed.button" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Matrimonio+Aliona+e+Gianluca&details=Taglio+della+torta+nuziale+e+festa+di+nozze&location=Cerimonia%3A+Chiesa+San+Giorgio+di+Chirignago+-+Piazza+S.+Giorgio%2C+8%2C+30174+Venezia+VE%0AFesta+di+nozze%3A+Agriturismo+Al+Segnavento+-+Via+Gatta%2C+76C%2C+30174+Venezia+VE&dates=20220625T193000Z%2F20220626T000000Z" target="_blank">
                 Salva in calendario
               </a>
             </div>
             <div class="container flex justify-center items-center flex-col text-center invitation-not-confirmed pointer-events-auto absolute inset-0">
-              <div class="text-[1.5rem] font-bold">
+              <div class="text-[1.5rem] font-bold" data-populate="confirmation.notConfirmed.title">
                 Ci spiace che sarete presenti
               </div>
-              <div class="text-m mt-2">
+              <div class="text-m mt-2" data-populate="confirmation.notConfirmed.text">
                 Grazie per averci comunicato che non potrete essere presenti. <br>
                 Ci dispiace molto, ci vedremo alla prossima occasione 
               </div>
@@ -221,23 +221,23 @@
       <div class="container" data-scroll data-scroll-section>
         <div class="py-16 lg:py-30">
           <div class="flex flex-col lg:flex-row justify-between w-full">
-            <div class="text-m">
-              <span>Ore 15.30 </span><br>
-              <strong>Cerimonia</strong> <br>
-              <span>Chiesa San Giorgio di Chirignago (VE)</span> <br>
+            <div class="text-m" data-scroll data-fade>
+              <span data-populate="footer.ceremony.time">Ore 15.30 </span><br>
+              <strong data-populate="footer.ceremony.title">Cerimonia</strong> <br>
+              <span data-populate="footer.ceremony.text">Chiesa San Giorgio di Chirignago (VE)</span> <br>
               <span>Piazza S. Giorgio, 8, 30174 Venezia VE</span> <br>
-              <a href="https://goo.gl/maps/196iKMu6TDMbCxu17" target="_blank" class="link-underline text-m text-green">Dove si trova?</a>
+              <a href="https://goo.gl/maps/196iKMu6TDMbCxu17" target="_blank" class="link-underline text-m text-green" data-populate="footer.where">Dove si trova?</a>
             </div>
-            <div class="mt-6 lg:mt-0">
-              <span class="invitation-full">In seguito alla cerimonia</span> 
-              <span class="invitation-partial">Ore 21.30</span> 
+            <div class="mt-6 lg:mt-0" data-scroll data-fade>
+              <span class="invitation-full" data-populate="footer.party.full.time">In seguito alla cerimonia</span> 
+              <span class="invitation-partial" data-populate="footer.party.partial.time">Ore 21.30</span> 
               <br>
-              <strong class="invitation-full">Ricevimento</strong>
-              <strong class="invitation-partial">Taglio della torta nuziale e Festa di nozze</strong>
+              <strong class="invitation-full" data-populate="footer.party.full.title">Ricevimento</strong>
+              <strong class="invitation-partial" data-populate="footer.party.partial.title">Taglio della torta nuziale e Festa di nozze</strong>
               <br>
               <span>Agriturismo Al Segnavento </span> <br>
               <span>Via Gatta, 76C, 30174 Venezia VE</span> <br>
-              <a href="https://goo.gl/maps/196iKMu6TDMbCxu17" target="_blank" class="link-underline text-m text-green">Dove si trova?</a>
+              <a href="https://goo.gl/maps/196iKMu6TDMbCxu17" target="_blank" class="link-underline text-m text-green" data-populate="footer.where">Dove si trova?</a>
             </div>
           </div>
         </div>     
@@ -248,7 +248,7 @@
         <div class="container flex flex-col lg:flex-row lg:justify-between lg:items-center">
           <div class="order-1">Aliona: +39 346 097 4447</div>
           <div class="order-2 lg:order-3">Gianluca: +39 346 402 2636 </div>
-          <div class="order-3 lg:order-2 mt-4 lg:mt-0">❤ 25/06/2022 {<span class="days-remaining"></span> <span>giorni</span>}</div>
+          <div class="order-3 lg:order-2 mt-4 lg:mt-0">❤ 25/06/2022 {<span class="days-remaining"></span> <span data-populate="footer.days">giorni</span>}</div>
         </div>
       </div>
     </div>

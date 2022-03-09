@@ -34,6 +34,7 @@ module.exports = {
         bounce: 'cubic-bezier(.17,.67,.3,1.33)'
       },
       transitionDuration: {
+        600: '600ms',
         1200: '1200ms',
         1800: '1800ms',
         2500: '2500ms'

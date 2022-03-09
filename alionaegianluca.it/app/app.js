@@ -1,18 +1,28 @@
 import Scroller from './classes/scroller'
 import LinesReveal from './classes/linesReveal'
 import form from './components/form'
+import scrollTo from './components/scrollTo'
+import daysRemaining from './components/daysRemaining'
 import messages from './dataset/messages'
 import { collection, doc, getDoc } from 'firebase/firestore'
 import { db } from './utils/firebase'
 
 const toInit = {
-  form
+  form,
+  scrollTo,
+  daysRemaining
 }
 
 class App {
   constructor () {
     this.locale = this.getUrlParam('locale') || 'it' 
     this.init ()
+    this.data = {
+      adults: 2,
+      children: 2,
+      confirm: false,
+      displayNme: 'Gianni'
+    }
   }
 
   async getFirestoreRef () {    
@@ -29,6 +39,8 @@ class App {
   }
 
   async init () {
+    this.scroller = new Scroller()
+    this.scroller.stop()
 
     await this.getFirestoreRef()
 
@@ -47,13 +59,18 @@ class App {
         new LinesReveal(el)
       })
     
-    this.scroller = new Scroller()
-    
-    Object.entries(toInit)
+      
+      Object.entries(toInit)
       .forEach(([component, initFunction]) => {
+        console.log(component)
         this[component] = initFunction(this)
       })
-  }
+
+      this.scroller.update()
+      this.scroller.start()
+
+      document.querySelector('.scroll-down-indicator').classList.remove('opacity-0')
+    }
 
   getUrlParam (key) {
     const urlParams = new Proxy(new URLSearchParams(window.location.search), {

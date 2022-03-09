@@ -16,7 +16,7 @@ export default class LinesReveal {
     this.lines.forEach((line, i) => {
       line.classList.add('opacity-0')
       line.classList.add('transform')
-      line.classList.add('translate-y-32')
+      line.classList.add('translate-y-16')
       line.style.setProperty('--delay', `${i * 0.18}s`)
     })
     this.el.setAttribute('data-scroll', '')

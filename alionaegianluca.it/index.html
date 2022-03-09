@@ -12,7 +12,7 @@
   <body>
     <div id="app" data-scroll-container>
 
-      <div class="absolute h-screen w-full z-20" data-scroll-section>
+      <div class="absolute h-screen w-full z-20 pointer-events-none" data-scroll-section>
         <div class="absolute inset-0 w-full h-full z-20">
           <div class="absolute w-[36vw] lg:w-[24vw] right-[-10vw] top-[-6vw]" data-scroll data-scroll-speed="3">
             <img src="/images/eucalyptus-1.png" class="w-full">
@@ -31,7 +31,7 @@
         <!-- Hero / Decorations -->
         
 
-        <div class="relative w-full h-full flex justify-center items-center" data-scroll data-scroll-speed="-4">
+        <div class="relative w-full h-full flex justify-center items-center" data-scroll data-scroll-speed="-4" data-fade data-fade-slow>
           <!-- Hero / Bg -->
           <div class="absolute w-full h-full bg-dove z-0">
             <div class="relative w-full h-full opacity-40 overflow-hidden">
@@ -43,20 +43,25 @@
 
           <!-- Hero / Text -->
           <div class="relative flex flex-col items-center w-full h-full justify-center">
-            <div class="relative z-10 w-[90%] max-w-[1200px] mix-blend-multiply">
-              <picture >
+            <div class="relative z-10 w-[90%] max-w-[1200px] mix-blend-multiply" data-scroll data-fade data-fade-slow>
+              <picture>
                 <source type="image/webp" srcset="/images/alionaegianluca.webp" media="(min-width: 1024px)">
                 <source type="image/jpeg" srcset="/images/alionaegianluca.jpg" media="(min-width: 1024px)">
                 <source type="image/webp" srcset="/images/alionaegianluca_mobile.webp" media="(min-width: 0px)">
                 <source type="image/jpeg" srcset="/images/alionaegianluca_mobile.jpg" media="(min-width: 0px)">
                 <img src="/images/alionaegianluca_mobile.jpg" alt="" >
               </picture>
-              <div class="flex items-center justify-center absolute pt-4 w-full">
+              <div class="flex flex-col items-center justify-center absolute pt-4 w-full">
                 <!-- <div class="w-8 lg:w-24 h-[1px] bg-green"></div> -->
                 <div class="mx-2 text-m lg:text-[1.5rem] leading-none">
                   25/06/2022
                 </div>
-                <!-- <div class="w-8 lg:w-24 h-[1px] bg-green"></div> -->
+                <div class="w-8 lg:w-24 h-[1px] bg-green mt-2"></div>
+              </div>
+            </div>
+            <div class="absolute bottom-6 w-full flex justify-center scroll-down-indicator opacity-0 transition-opacity duration-400 ease-power-out">
+              <div class="arrow transform rotate-45 scroll-to" data-target="#intro">
+                <span class="w-3 h-[1px] bg-black inline-block relative"></span><span class="h-3 w-[1px] bg-black inline-block relative"></span>
               </div>
             </div>
           </div>
@@ -64,13 +69,12 @@
       </div>
 
       <!-- Intro -->
-      <div class="w-full block bg-white" data-scroll-section>
+      <div class="w-full block bg-white" id="intro" data-scroll-section>
         <div class="container py-12 lg:py-24">
           <div class="lg:px-[4vw]">
             <div class="text-[2rem] lg:text-l xl:text-xl 2xl:text-xxl leading-[1.375]">
               <div data-lines><span data-populate="intro.greeting">Ciao</span> <span class="font-bold inline-block" data-populate="route.name">Mario</span>,</div>
-              <div data-populate="intro.row1" data-lines>abbiamo il piacere di invitarti al nostro matrimonio che si terrà il giorno sabato 25 giugno 2022.</div>
-              <div data-populate="intro.row2" data-lines>La cerimonia si terrà presso la <br/><strong>Chiesa di San Giorgio di Chirignago</strong> (Venezia) alle ore <strong>15.30</strong>.</div>
+              <div data-populate="intro.main" data-lines>abbiamo il piacere di invitarti al nostro matrimonio che si terrà il giorno sabato 25 giugno 2022. <br> La cerimonia si terrà presso la <br/><strong>Chiesa di San Giorgio di Chirignago</strong> (Venezia) alle ore <strong>15.30</strong>.</div>
             </div>
           </div>
         </div>
@@ -83,27 +87,27 @@
       </div>
 
       <!-- Invitation -->
-      <div class="container my-16 lg:my-32 relative" data-scroll-section>
+      <div class="container my-16 lg:my-32 relative z-20" data-scroll-section>
         <div class="top-0 lg:min-h-screen lg:flex items-center" data-scroll>
           <div class="grid grid-cols-1 lg:grid-cols-5 gap-24 ">
             <div class="lg:col-span-2 lg:flex flex-col justify-between">
               <div class="invitation-full">
-                <p class="text-l" data-populate="invitation.full.title" data-lines>
+                <p class="text-l" data-populate="invitation.full.title" data-scroll data-fade>
                   Siamo lieti di avervi ospiti per la serata che si terrà presso l’agriturismo Al Segnavento di Zelarino (Venezia).
                 </p>
-                <p class="mt-12" data-populate="invitation.full.text" data-lines>
+                <p class="mt-12" data-populate="invitation.full.text" data-scroll data-fade>
                   Ad attendervi ci sarà un ricco buffet iniziale composto da diversi assaggi di produzioni locali. A seguire una ricca cena proposta dall’agriturismo con squisite pietanze de casa e ghesboro altre bueae intanto scrivo a caso per riempire lo spazio.
                 </p>
-                <p class="mt-12" data-lines>
-                 <span data-populate="invitation.clickHere"></span>
+                <p class="mt-12" data-scroll data-fade>
+                 <span data-populate="invitation.clickHere" class="scroll-to text-green link-underline"></span>
                  <span data-populate="invitation.allergens"></span>
                 </p>
               </div>
               <div class="invitation-partial">
-                <p class="text-l" data-populate="invitation.partial.title" data-lines>
+                <p class="text-l" data-populate="invitation.partial.title" data-fade>
                   Siamo lieti di avervi ospiti per la serata che si terrà presso l’agriturismo Al Segnavento di Zelarino (Venezia).
                 </p>
-                <p class="mt-12" data-populate="invitation.partial.text" data-lines>
+                <p class="mt-12" data-populate="invitation.partial.text" data-fade>
                   Ad attendervi ci sarà un ricco buffet iniziale composto da diversi assaggi di produzioni locali. A seguire una ricca cena proposta dall’agriturismo con squisite pietanze de casa e ghesboro altre bueae intanto scrivo a caso per riempire lo spazio.
                 </p>
               </div>
@@ -111,7 +115,7 @@
                 <strong>Agriturismo Al Segnavento</strong> <br>
                 Società Agricola Farm House S.S. <br><br>
                 Via Eugenio Gatta, 76/c Venezia <br>
-                <a href="https://goo.gl/maps/7XZb1PLBfB6Gh2eC9" class="text-green underline transition-opacity duration-200 hover:opacity-60" data-populate="invitation.showOnMap" target="_blank">Dove si trova?</a>
+                <a href="https://goo.gl/maps/7XZb1PLBfB6Gh2eC9" class="text-green link-underline transition-opacity duration-200 hover:opacity-60" data-populate="invitation.showOnMap" target="_blank">Dove si trova?</a>
                 <br><br>
                 Tel: +39 041 50 200 75
               </div>
@@ -128,95 +132,124 @@
       </div>
 
       <!-- Confirmation -->
-      <div class="bg-dove py-12 lg:py-24 from-center" data-scroll-section data-reveal="clip" data-scroll>
-        <div class="container">
-          <h2 class="font-bold text-l lg:text-xl" data-lines data-populate="confirmation.title">Confermi la tua presenza?</h2>
-          <form id="main-form" data-fade data-scroll>
-            <div class="flex flex-col lg:flex-row mt-14">
-              <div>
-                <div class="text-m font-bold mb-2.5" data-populate="confirmation.confirm">Confermi?</div>
-                <div class="flex items-center mt-5 relative">
-                  <div class="radio-button">
-                    <input type="radio" id="confirm_yes" name="confirm" value="1" checked>
-                    <div class="fake-radio"><span></span></div>
-                    <label for="confirm_yes" data-populate="confirmation.yes">
-                      Sì
-                    </label>
-                  </div>
-                  <div class="radio-button ml-12">
-                    <input type="radio" id="confirm_no" name="confirm" value="0">
-                    <div class="fake-radio"><span></span></div>
-                    <label for="confirm_no" data-populate="confirmation.no">
-                      Sì
-                    </label>
-                    <div class="radio-note">😢</div>
-                  </div>
-                </div>
-              </div>
-              <div class="flex items-center lg:ml-20 mt-12 lg:mt-0">
+      <div class="relative bg-dove z-0" data-scroll-section>
+        <div class="py-12 lg:py-24 from-center relative z-20" data-reveal="clip" data-scroll>
+          <div class="container invitation-form relative ">
+            <h2 class="font-bold text-l lg:text-xl" data-lines data-populate="confirmation.title">Confermi la tua presenza?</h2>
+            <form id="main-form" data-fade data-scroll>
+              <div class="flex flex-col lg:flex-row mt-14">
                 <div>
-                  <label for="confirm_adults" class="relative block text-m font-bold mb-2.5" data-populate="confirmation.adults">Adulti</label>
-                  <input type="number" name="adults" id="confirm_adults" class="text-m border-2 border-white transition-all duration-500 ease-power-out focus:border-green outline-none p-2 w-24">
+                  <div class="text-m font-bold mb-2.5" data-populate="confirmation.confirm">Confermi?</div>
+                  <div class="flex items-center mt-5 relative">
+                    <div class="radio-button">
+                      <input type="radio" id="confirm_yes" name="confirm" value="1" checked>
+                      <div class="fake-radio"><span></span></div>
+                      <label for="confirm_yes" data-populate="confirmation.yes">
+                        Sì
+                      </label>
+                    </div>
+                    <div class="radio-button ml-12">
+                      <input type="radio" id="confirm_no" name="confirm" value="0">
+                      <div class="fake-radio"><span></span></div>
+                      <label for="confirm_no" data-populate="confirmation.no">
+                        Sì
+                      </label>
+                      <div class="radio-note">😢</div>
+                    </div>
+                  </div>
                 </div>
-                <div class="ml-12">
-                  <label for="confirm_children" class="relative block text-m font-bold mb-2.5" data-populate="confirmation.children">Bambini</label>
-                  <input type="number" name="children" id="confirm_children" class="text-m border-2 border-white transition-all duration-500 ease-power-out focus:border-green outline-none p-2 w-24">
+                <div class="flex items-center lg:ml-20 mt-12 lg:mt-0">
+                  <div>
+                    <label for="confirm_adults" class="relative block text-m font-bold mb-2.5" data-populate="confirmation.adults">Adulti</label>
+                    <input type="number" name="adults" id="confirm_adults" class="text-m border-2 border-white transition-all duration-500 ease-power-out focus:border-green outline-none p-2 w-24">
+                  </div>
+                  <div class="ml-12">
+                    <label for="confirm_children" class="relative block text-m font-bold mb-2.5" data-populate="confirmation.children">Bambini</label>
+                    <input type="number" name="children" id="confirm_children" class="text-m border-2 border-white transition-all duration-500 ease-power-out focus:border-green outline-none p-2 w-24">
+                  </div>
                 </div>
               </div>
+              <div class="mt-8">
+                <label for="confirm_notes" class="relative block text-m font-bold mb-2.5 mt-14" data-populate="confirmation.notes">Note</label>
+                <textarea data-populate="confirmation.placeholder" name="notes" id="confirm_notes" cols="30" rows="10" class="text-m w-full resize-none overflow-y-auto border-2 border-white transition-all duration-500 ease-power-out focus:border-green outline-none p-4"></textarea>
+              </div>
+              <div class="mt-12 lg:mt-24 w-full flex justify-center">
+                <button type="submit" class="main-button" data-populate="confirmation.submit">
+                  Invia
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="absolute inset-0 w-full h-full flex justify-center items-center pointer-events-none z-10">
+            <div class="container flex justify-center items-center flex-col text-center invitation-confirmed pointer-events-auto absolute inset-0">
+              <div class="text-[1.5rem] font-bold">
+                Conferma ricevuta
+              </div>
+              <div class="text-m mt-2">
+                Grazie, abbiamo ricevuto la tua conferma correttamente. <br>
+                Clicca il pulsante qui sotto per salvare la data in calendario.
+              </div>
+              <a class="main-button invitation-full mt-6" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Matrimonio+Aliona+e+Gianluca&details=Cerimonia+di+matrimonio+di+Aliona+e+Gianluca&location=Cerimonia%3A+Chiesa+San+Giorgio+di+Chirignago+-+Piazza+S.+Giorgio%2C+8%2C+30174+Venezia+VE%0ARicevimento%3A+Agriturismo+Al+Segnavento+-+Via+Gatta%2C+76C%2C+30174+Venezia+VE&dates=20220625T133000Z%2F20220626T000000Z" target="_blank">
+                Salva in calendario
+              </a>
+              <a class="main-button invitation-partial mt-6" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Matrimonio+Aliona+e+Gianluca&details=Taglio+della+torta+nuziale+e+festa+di+nozze&location=Cerimonia%3A+Chiesa+San+Giorgio+di+Chirignago+-+Piazza+S.+Giorgio%2C+8%2C+30174+Venezia+VE%0AFesta+di+nozze%3A+Agriturismo+Al+Segnavento+-+Via+Gatta%2C+76C%2C+30174+Venezia+VE&dates=20220625T193000Z%2F20220626T000000Z" target="_blank">
+                Salva in calendario
+              </a>
             </div>
-            <div class="mt-8">
-              <label for="confirm_notes" class="relative block text-m font-bold mb-2.5 mt-14" data-populate="confirmation.notes">Note</label>
-              <textarea data-populate="confirmation.placeholder" name="notes" id="confirm_notes" cols="30" rows="10" class="text-m w-full resize-none overflow-y-auto border-2 border-white transition-all duration-500 ease-power-out focus:border-green outline-none p-4"></textarea>
+            <div class="container flex justify-center items-center flex-col text-center invitation-not-confirmed pointer-events-auto absolute inset-0">
+              <div class="text-[1.5rem] font-bold">
+                Ci spiace che sarete presenti
+              </div>
+              <div class="text-m mt-2">
+                Grazie per averci comunicato che non potrete essere presenti. <br>
+                Ci dispiace molto, ci vedremo alla prossima occasione 
+              </div>
             </div>
-            <div class="mt-12 lg:mt-24 w-full flex justify-center">
-              <button type="submit" class="main-button" data-populate="confirmation.submit">
-                Invia
-              </button>
-            </div>
-          </form>
+          </div>
+        </div>
+        <div class="absolute inset-0 w-full h-full pointer-events-none z-0">
+          <div class="absolute w-[38vw] lg:w-[20vw] right-[-8vw] lg:right-0 top-[-25vw] transform rotate-[-20deg]" data-scroll data-scroll-speed="0.5">
+            <img src="/images/eucalyptus-3.png" class="w-full">
+          </div>
+          <div class="absolute w-[42vw] lg:w-[14vw] left-[-10vw] lg:left-[-1vw] bottom-[-8vw]" data-scroll data-scroll-speed="2">
+            <img src="/images/eucalyptus-2.png" class="w-full">
+          </div>
         </div>
       </div>
 
       <!-- Outro -->
       <div class="container" data-scroll data-scroll-section>
         <div class="py-16 lg:py-30">
-          <div class="flex justify-between w-full">
-            <div>
-              <div class="font-bold text-[1.5rem]">
-                Cerimonia
-              </div>
-              <div class="text-m flex">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 mr-2" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm6-1.8C18 6.57 15.35 4 12 4s-6 2.57-6 6.2c0 2.34 1.95 5.44 6 9.14 4.05-3.7 6-6.8 6-9.14zM12 2c4.2 0 8 3.22 8 8.2 0 3.32-2.67 7.25-8 11.8-5.33-4.55-8-8.48-8-11.8C4 5.22 7.8 2 12 2z"/></svg>
-                <span>Chiesa San Giorgio di Chirignago (VE)</span>
-              </div>
-              <div class="text-m flex">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 mr-2" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-                <span>Alle ore 15.30</span>
-              </div>
-              <a href="https://goo.gl/maps/196iKMu6TDMbCxu17" target="_blank" class="text-m text-green">Dove si trova?</a>
+          <div class="flex flex-col lg:flex-row justify-between w-full">
+            <div class="text-m">
+              <span>Ore 15.30 </span><br>
+              <strong>Cerimonia</strong> <br>
+              <span>Chiesa San Giorgio di Chirignago (VE)</span> <br>
+              <span>Piazza S. Giorgio, 8, 30174 Venezia VE</span> <br>
+              <a href="https://goo.gl/maps/196iKMu6TDMbCxu17" target="_blank" class="link-underline text-m text-green">Dove si trova?</a>
             </div>
-            <div>
-              <div class="font-bold text-[1.5rem] invitation-full">
-                Ricevimento
-              </div>
-              <div class="font-bold text-[1.5rem] invitation-partial">
-                Taglio della torta
-              </div>
-              <div class="text-m flex">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 mr-2" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm6-1.8C18 6.57 15.35 4 12 4s-6 2.57-6 6.2c0 2.34 1.95 5.44 6 9.14 4.05-3.7 6-6.8 6-9.14zM12 2c4.2 0 8 3.22 8 8.2 0 3.32-2.67 7.25-8 11.8-5.33-4.55-8-8.48-8-11.8C4 5.22 7.8 2 12 2z"/></svg>
-                <span>Agriturismo Al Segnavento - Zelarino (VE)</span>
-              </div>
-              <div class="text-m flex">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 mr-2" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-                <span class="invitation-full">In seguito alla cerimonia</span>
-                <span class="invitation-partial">Alle ore 21.30</span>
-              </div>
-              <a href="https://goo.gl/maps/WLV6BwuoVhop642cA" target="_blank" class="text-m text-green">Dove si trova?</a>
+            <div class="mt-6 lg:mt-0">
+              <span class="invitation-full">In seguito alla cerimonia</span> 
+              <span class="invitation-partial">Ore 21.30</span> 
+              <br>
+              <strong class="invitation-full">Ricevimento</strong>
+              <strong class="invitation-partial">Taglio della torta nuziale e Festa di nozze</strong>
+              <br>
+              <span>Agriturismo Al Segnavento </span> <br>
+              <span>Via Gatta, 76C, 30174 Venezia VE</span> <br>
+              <a href="https://goo.gl/maps/196iKMu6TDMbCxu17" target="_blank" class="link-underline text-m text-green">Dove si trova?</a>
             </div>
           </div>
-        </div>
+        </div>     
+      </div>
 
-            
+      <!-- Footer -->
+      <div class="bg-green/60 text-white py-8" data-scroll-section>
+        <div class="container flex flex-col lg:flex-row lg:justify-between lg:items-center">
+          <div class="order-1">Aliona: +39 346 097 4447</div>
+          <div class="order-2 lg:order-3">Gianluca: +39 346 402 2636 </div>
+          <div class="order-3 lg:order-2 mt-4 lg:mt-0">❤ 25/06/2022 {<span class="days-remaining"></span> <span>giorni</span>}</div>
+        </div>
       </div>
     </div>
     <script type="module" src="/main.js"></script>

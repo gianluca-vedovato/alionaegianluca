@@ -159,15 +159,62 @@ html.has-scroll-dragging {
 /* Main button */
 
 .main-button {
-  @apply text-m py-4 px-8 leading-none border-2 border-green transition-all duration-700 ease-power-out;
+  @apply text-m py-4 px-8 leading-none border-2 border-green transition-all duration-700 ease-power-out relative;
+}
+
+.main-button::after {
+	content: '';
+	z-index: -1;
+	@apply absolute inset-0 w-full h-full bg-green transform scale-x-0 origin-right transition-transform duration-700 ease-power-out;
 }
 
 .main-button:hover {
-  @apply bg-white/60;
+  @apply text-white;
+}
+
+.main-button.loading {
+	@apply pointer-events-none opacity-60;
+}
+
+.main-button.loading::after {
+	animation: loading 1.6s infinite ease-in-out;
+}
+
+.main-button:hover::after {
+	@apply origin-left scale-x-100;
+}
+
+@keyframes loading {
+	0% {
+		transform-origin: right;
+		transform: scaleX(1);
+	}
+	45% {
+		transform-origin: right;
+		transform: scaleX(0);
+	}
+	55% {
+		transform-origin: left;
+		transform: scaleX(0);
+	}
+	100% {
+		transform-origin: left;
+		transform: scaleX(1);
+	}
+}
+
+/* Inview Animations */
+*[data-fade] {
+	@apply opacity-0 transform translate-y-5 transition-all duration-600 ease-power-out;
+}
+*[data-fade].is-inview {
+	@apply opacity-100 translate-y-0;
+}
+*[data-fade-slow] {
+	@apply duration-1200;
 }
 
 
-/* Inview Animations */
 *[data-lines] .line {
   transition-delay: var(--delay);
   @apply whitespace-nowrap transition-all duration-1800 ease-in-out;
@@ -210,4 +257,62 @@ html.has-scroll-dragging {
 
 *[data-fade].is-inview {
   @apply opacity-100 translate-y-0;
+}
+
+.scroll-down-indicator .arrow {
+	animation: scroll-down 1.6s infinite linear;
+}
+
+@keyframes scroll-down {
+	0%, 
+	100% {
+		opacity: 1;
+		transform: translateY(0) rotate(45deg);
+	}
+	45% {
+		opacity: 0;
+		transform: translateY(8px) rotate(45deg);
+	}
+	55% {
+		opacity: 0;
+		transform: translateY(-8px) rotate(45deg);
+	}
+}
+
+.link-underline {
+	@apply inline-block relative transition-opacity duration-300 ease-power-out cursor-pointer;
+}
+
+.link-underline::after {
+	content: '';
+	height: 1px;
+	background-color: currentColor;
+	@apply w-full absolute block transition-all duration-300 ease-power-out;
+}
+
+.link-underline:hover {
+	opacity: 0.6;
+}
+
+.link-underline:hover::after {
+	animation: hover-line 0.8s ease-in-out;
+}
+
+@keyframes hover-line {
+	0% {
+		transform-origin: right;
+		transform: scaleX(1);
+	}
+	45% {
+		transform-origin: right;
+		transform: scaleX(0);
+	}
+	55% {
+		transform-origin: left;
+		transform: scaleX(0);
+	}
+	100% {
+		transform-origin: left;
+		transform: scaleX(1);
+	}
 }

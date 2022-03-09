@@ -8,10 +8,7 @@ export default class Scroller {
   init () {
     this.scroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
-      smooth: true,
-      smartphone: {
-        smooth: true
-      }
+      smooth: true
     })
 
     this.update()

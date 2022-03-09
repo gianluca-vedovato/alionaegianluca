@@ -33,6 +33,9 @@ module.exports = {
         'power-out': 'cubic-bezier(0.82, 0, 0.36, 1)',
         bounce: 'cubic-bezier(.17,.67,.3,1.33)'
       },
+      height: {
+        screen: 'calc(var(--vh, 1vh) * 100)'
+      },
       transitionDuration: {
         600: '600ms',
         1200: '1200ms',

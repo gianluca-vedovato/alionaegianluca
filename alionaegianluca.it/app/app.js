@@ -6,6 +6,7 @@ import daysRemaining from './components/daysRemaining'
 import messages from './dataset/messages'
 import { collection, doc, getDoc } from 'firebase/firestore'
 import { db } from './utils/firebase'
+import vh from './utils/vh'
 
 const toInit = {
   form,
@@ -33,18 +34,19 @@ class App {
     const snap = await getDoc(docRef)
     this.data = snap.data()
 
+    console.log(this.data)
     this.name = this.data.displayName
-    this.type = this.data.type || 'partial'
+    this.type = this.data.type || 'Partial'
     this.docRef = docRef
   }
 
   async init () {
     this.scroller = new Scroller()
     this.scroller.stop()
-
+    vh()
     await this.getFirestoreRef()
 
-    const toRemove = this.type === 'full'
+    const toRemove = this.type === 'Full'
       ? document.querySelectorAll('.invitation-partial')
       : document.querySelectorAll('.invitation-full')
     

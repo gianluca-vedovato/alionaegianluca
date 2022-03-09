@@ -36,33 +36,33 @@ export default ({ scroller, id, data: { adults, children, confirm, notes, displa
       ? document.querySelector('.invitation-confirmed')
       : document.querySelector('.invitation-not-confirmed')
     
-      try {
-        await addDoc(writes, {
-          createdAt: serverTimestamp(),
-          adults,
-          children,
-          notes,
-          confirmation: confirmation === '1' ? 'Sì' : 'No',
-          displayName,
-          id
-        })
-        
-        await setDoc(docRef, {
-          confirmation,
-          notes,
-          adults,
-          children
-        }, {
-          merge: true
-        })
-      } catch (e) {
-        console.error(e)
-      }
+    // try {
+    //   await addDoc(writes, {
+    //     createdAt: serverTimestamp(),
+    //     adults,
+    //     children,
+    //     notes,
+    //     confirmation: confirmation === '1' ? 'Sì' : 'No',
+    //     displayName,
+    //     id
+    //   })
       
-    scroller.scrollTo(toShow)
+    //   await setDoc(docRef, {
+    //     confirmation,
+    //     notes,
+    //     adults,
+    //     children
+    //   }, {
+    //     merge: true
+    //   })
+    // } catch (e) {
+    //   console.error(e)
+    // }
+      
+    scroller.scrollTo(toShow, { offset: 120 })
     gsap.timeline()
-      .to('.invitation-form', { opacity: 0, y: 20, pointerEvents: 'none', ease: 'power4.out', duration: 1.2 })
-      .to(toShow, { autoAlpha: 1, y: 0,  ease: 'power4.out', duration: 1.2 })
+      .to('.invitation-form', { opacity: 0, y: 20, pointerEvents: 'none', ease: 'power4.out', duration: 1 })
+      .to(toShow, { autoAlpha: 1, y: 0,  ease: 'power4.out', duration: 1 })
 
     return false
   })

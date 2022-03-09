@@ -168,9 +168,6 @@ html.has-scroll-dragging {
 	@apply absolute inset-0 w-full h-full bg-green transform scale-x-0 origin-right transition-transform duration-700 ease-power-out;
 }
 
-.main-button:hover {
-  @apply text-white;
-}
 
 .main-button.loading {
 	@apply pointer-events-none opacity-60;
@@ -180,8 +177,14 @@ html.has-scroll-dragging {
 	animation: loading 1.6s infinite ease-in-out;
 }
 
-.main-button:hover::after {
-	@apply origin-left scale-x-100;
+@media (hover: hover) {
+	.main-button:hover {
+		@apply text-white;
+	}
+	
+	.main-button:hover::after {
+		@apply origin-left scale-x-100;
+	}
 }
 
 @keyframes loading {
@@ -226,7 +229,6 @@ html.has-scroll-dragging {
 *[data-fade-head].is-inview {
 	@apply opacity-100;
 }
-
 
 *[data-lines] .line {
   transition-delay: var(--delay);
@@ -295,13 +297,16 @@ html.has-scroll-dragging {
 	@apply w-full absolute block transition-all duration-300 ease-power-out;
 }
 
-.link-underline:hover {
-	opacity: 0.6;
+@media (hover: hover) {
+	.link-underline:hover {
+		opacity: 0.6;
+	}
+
+	.link-underline:hover::after {
+		animation: hover-line 0.8s ease-in-out;
+	}
 }
 
-.link-underline:hover::after {
-	animation: hover-line 0.8s ease-in-out;
-}
 
 @keyframes hover-line {
 	0% {

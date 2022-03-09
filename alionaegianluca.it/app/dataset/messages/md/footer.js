@@ -1,19 +1,19 @@
 export default {
   ceremony: {
-    time: 'Ore 15.30',
-    title: 'Cerimonia',
-    text: 'Chiesa San Giorgio di Chirignago (VE)'
+    time: 'Ora 15.30',
+    title: 'Ceremonie',
+    text: 'Biserica San Giorgio di Chirignago (VE)'
   },
   party: {
     full: {
-      time: 'In seguito alla cerimonia',
-      title: 'Ricevimento',
+      time: 'În urma ceremoniei',
+      title: 'Chitanta',
     },
     partial: {
-      time: 'Ore 21.20',
-      title: 'Taglio della torta nuzial;e e festa di nozze'
+      time: 'Ora 21.30',
+      title: 'Tăiere tort'
     }
   },
-  where: 'Dove si trova?',
-  days: 'giorni'
+  where: 'Unde este?',
+  days: 'zile'
 }

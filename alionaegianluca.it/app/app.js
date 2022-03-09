@@ -28,7 +28,7 @@ class App {
   async getFirestoreRef () {    
     this.id = this.getUrlParam('id')
     if (!this.id) return
-    const confirmationsRef = collection(db, 'confirmations_test')
+    const confirmationsRef = collection(db, 'confirmations')
     const docRef = doc(confirmationsRef, this.id)
     const snap = await getDoc(docRef)
     this.data = snap.data()
@@ -45,8 +45,8 @@ class App {
     await this.getFirestoreRef()
 
     const toRemove = this.type === 'full'
-      ? document.querySelectorAll('.invitation-full')
-      : document.querySelectorAll('.invitation-partial')
+      ? document.querySelectorAll('.invitation-partial')
+      : document.querySelectorAll('.invitation-full')
     
     toRemove.forEach(el => {
       el.parentNode.removeChild(el)

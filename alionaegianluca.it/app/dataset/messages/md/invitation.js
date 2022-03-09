@@ -1,13 +1,13 @@
 export default {
   full: {
     title: "Il ricevimento si terrà presso l'agriturismo Al Segnavento di Zelarino (VE) in seguito alla cerimonia",
-    text: 'Ad attendervi ci sarà un lungo aperitivo in giardino, composto da assaggi di produzione locare. A seguire verrà servita la cena. Vi chiediamo di comunicarci eventuali intolleranze per tempo in modo da potervi offrire un menú curato e adeguato. Dopo il taglio della torta ci sarà musica e cocktail, si potrà ballare a piedi nudi perciò mettevi comodi 😄',
+    text: 'În grădină va fi un aperitiv lung, constând în degustări de producție locală. Ulterior, se va servi cina compusă dintr-un aperitiv, două feluri de început și un fel de al doilea. Va rugam sa ne anuntati din timp orice alergii sau intolerante pentru a va putea oferi un serviciu adecvat. <br> După tăierea prăjiturii va fi muzică și un open bar, puteți dansa desculți așa că faceți-vă confortabil 😃',
   },
   partial: {
-    title: 'Siamo lieti di avervi ospiti per la serata che si terrà presso l’agriturismo Al Segnavento di Zelarino (Venezia).',
-    text: 'Ad attendervi ci sarà un ricco buffet iniziale composto da diversi assaggi di produzioni locali. A seguire una ricca cena proposta dall’agriturismo con squisite pietanze de casa e ghesboro altre bueae intanto scrivo a caso per riempire lo spazio.',
+    title: 'Ne face plăcere să vă avem ca oaspeți pentru seara care va avea loc la ferma Al Segnavento din Zelarino (Veneția).',
+    text: 'Am fi bucuroși să vă primim pentru tăierea tortului de nuntă care va avea loc la ora 21.30. După aceea, va fi muzică și un open bar, puteți dansa desculț, așa că faceți-vă confortabil 😃',
   },
-  clickHere: 'Clicca qui ',
-  allergens: ' per comunicarci eventuali allergie o intolleranze alimentari.',
-  showOnMap: 'Mostramelo sulla mappa',
+  clickHere: 'Click aici ',
+  allergens: ' pentru a ne anunța orice alergii sau intoleranțe alimentare.',
+  showOnMap: 'Arată-mi pe hartă',
 }

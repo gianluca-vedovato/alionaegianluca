@@ -10,7 +10,7 @@ export default {
       title: 'Ricevimento',
     },
     partial: {
-      time: 'Ore 21.20',
+      time: 'Ore 21.30',
       title: 'Taglio della torta nuzial;e e festa di nozze'
     }
   },

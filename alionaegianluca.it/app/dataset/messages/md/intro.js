@@ -1,4 +1,4 @@
 export default {
   greeting: 'Ciao',
-  main: 'abbiamo il piacere di invitarti al nostro matrimonio che si terrà sabato 25 giugno 2022.<br> La cerimonia si terrà presso la <br/>Chiesa di <strong>San Giorgio</strong> di <strong>Chirignago</strong> (Venezia) alle ore <strong>15.30</strong>.',
+  main: 'suntem bucuroși să vă invităm la nunta noastră care va avea loc sâmbătă, 25 iunie 2022. <br> Ceremonia va avea loc la <br/> Biserica <strong> San Giorgio </strong> din <strong> Chirignago < /strong> ( Veneția ) la <strong> 15.30 </strong>.',
 }

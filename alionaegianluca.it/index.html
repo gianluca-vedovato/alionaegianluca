@@ -104,10 +104,10 @@
                 </p>
               </div>
               <div class="invitation-partial">
-                <p class="text-l" data-populate="invitation.partial.title" data-fade>
+                <p class="text-l" data-populate="invitation.partial.title" data-scroll data-fade>
                   Siamo lieti di avervi ospiti per la serata che si terrà presso l’agriturismo Al Segnavento di Zelarino (Venezia).
                 </p>
-                <p class="mt-12" data-populate="invitation.partial.text" data-fade>
+                <p class="mt-12" data-populate="invitation.partial.text" data-scroll data-fade>
                   Ad attendervi ci sarà un ricco buffet iniziale composto da diversi assaggi di produzioni locali. A seguire una ricca cena proposta dall’agriturismo con squisite pietanze de casa e ghesboro altre bueae intanto scrivo a caso per riempire lo spazio.
                 </p>
               </div>
@@ -170,7 +170,8 @@
                 </div>
               </div>
               <div class="mt-8">
-                <label for="confirm_notes" class="relative block text-m font-bold mb-2.5 mt-14" data-populate="confirmation.notes">Note</label>
+                <label for="confirm_notes" class="relative block text-m font-bold mb-2.5 mt-14 invitation-full" data-populate="confirmation.notes.full">Note</label>
+                <label for="confirm_notes" class="relative block text-m font-bold mb-2.5 mt-14 invitation-partial" data-populate="confirmation.notes.partial">Note</label>
                 <textarea data-populate="confirmation.placeholder" name="notes" id="confirm_notes" cols="30" rows="10" class="text-m w-full resize-none overflow-y-auto border-2 border-white transition-all duration-500 ease-power-out focus:border-green outline-none p-4"></textarea>
               </div>
               <div class="mt-12 lg:mt-24 w-full flex justify-center">

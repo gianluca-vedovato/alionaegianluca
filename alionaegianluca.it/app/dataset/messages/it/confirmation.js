@@ -5,7 +5,10 @@ export default {
   no: 'No',
   adults: 'Adulti',
   children: 'Bambini',
-  notes: 'Se hai allergie, intolleranze o altre informazioni che dobbiamo sapere, comunicacelo qui',
+  notes: {
+    full: 'Se hai allergie, intolleranze o altre informazioni che dobbiamo sapere, comunicacelo qui',
+    partial: 'Se hai altro da comunicarci, scrivilo pure qui sotto'
+  },
   placeholder: 'Scrivi qui eventuali note',
   submit: 'Conferma',
   confirmed: {

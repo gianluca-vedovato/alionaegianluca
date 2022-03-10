@@ -13,8 +13,8 @@ export default (isSingular) => ({
   submit: 'Conferma',
   confirmed: {
     title: 'Conferma ricevuta! 🤗',
-    text: 'Grazie, abbiamo ricevuto la tua conferma correttamente. <br> Clicca il pulsante qui sotto per salvare la data in calendario.',
-    button: 'Salva in calendario'
+    text: 'Grazie, abbiamo ricevuto la tua conferma correttamente. <br> Clicca il pulsante qui sotto per aggiungere la data al calendario.',
+    button: 'Aggiungi al calendario'
   },
   notConfirmed: {
     title: 'Che peccato! 😢',

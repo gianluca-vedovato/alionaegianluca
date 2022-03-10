@@ -98,9 +98,9 @@
       <div class="w-full block bg-white" id="intro" data-scroll-section>
         <div class="container py-12 lg:py-24">
           <div class="lg:px-[4vw]">
-            <div class="text-[2rem] lg:text-l xl:text-xl 2xl:text-xxl leading-[1.375]" data-fade data-scroll>
-              <div ><span data-populate="intro.greeting">Ciao</span> <span class="font-bold inline-block" data-populate="route.name">Mario</span>,</div>
-              <div data-populate="intro.main">abbiamo il piacere di invitarti al nostro matrimonio che si terrà il giorno sabato 25 giugno 2022. <br> La cerimonia si terrà presso la <br/><strong>Chiesa di San Giorgio di Chirignago</strong> (Venezia) alle ore <strong>15.30</strong>.</div>
+            <div class="text-[2.25rem] lg:text-l xl:text-xl 2xl:text-xxl leading-[1.375]" data-fade data-scroll>
+              <div ><span data-populate="intro.greeting"></span> <span class="font-bold inline-block" data-populate="route.name"></span>,</div>
+              <div data-populate="intro.main"></div>
             </div>
           </div>
         </div>
@@ -128,23 +128,19 @@
           <div class="grid grid-cols-1 lg:grid-cols-5 gap-24 ">
             <div class="lg:col-span-2 lg:flex flex-col justify-between">
               <div class="invitation-full">
-                <p class="text-l" data-populate="invitation.full.title" data-scroll data-fade>
-                  Siamo lieti di avervi ospiti per la serata che si terrà presso l’agriturismo Al Segnavento di Zelarino (Venezia).
-                </p>
-                <p class="mt-12" data-populate="invitation.full.text" data-scroll data-fade>
-                  Ad attendervi ci sarà un ricco buffet iniziale composto da diversi assaggi di produzioni locali. A seguire una ricca cena proposta dall’agriturismo con squisite pietanze de casa e ghesboro altre bueae intanto scrivo a caso per riempire lo spazio.
+                <p class="text-[1.875rem] lg:text-l" data-populate="invitation.full.title" data-scroll data-fade>
                 </p>
                 <p class="mt-12" data-scroll data-fade>
-                 <span data-populate="invitation.clickHere" class="scroll-to text-green link-underline"></span>
-                 <span data-populate="invitation.allergens"></span>
+                  <span data-populate="invitation.full.text.part1"></span> <br>
+                  <span data-populate="invitation.clickHere" class="scroll-to text-green link-underline" data-target="#confirmation"></span>
+                  <span data-populate="invitation.allergens"></span> <br>
+                  <span data-populate="invitation.full.text.part2"></span>
                 </p>
               </div>
               <div class="invitation-partial">
                 <p class="text-l" data-populate="invitation.partial.title" data-scroll data-fade>
-                  Siamo lieti di avervi ospiti per la serata che si terrà presso l’agriturismo Al Segnavento di Zelarino (Venezia).
                 </p>
                 <p class="mt-12" data-populate="invitation.partial.text" data-scroll data-fade>
-                  Ad attendervi ci sarà un ricco buffet iniziale composto da diversi assaggi di produzioni locali. A seguire una ricca cena proposta dall’agriturismo con squisite pietanze de casa e ghesboro altre bueae intanto scrivo a caso per riempire lo spazio.
                 </p>
               </div>
               <div class="border-black border-t pt-6 mt-12" data-fade data-scroll>
@@ -172,7 +168,7 @@
       </div>
 
       <!-- Confirmation -->
-      <div class="relative bg-dove z-0" data-scroll-section>
+      <div class="relative bg-dove z-0" id="confirmation" data-scroll-section>
         <div class="py-12 lg:py-24 from-center relative z-20" data-reveal="clip" data-scroll>
           <div class="container invitation-form relative ">
             <h2 class="font-bold text-l lg:text-xl" data-scroll data-fade data-populate="confirmation.title">Confermi la tua presenza?</h2>
@@ -269,15 +265,15 @@
       <!-- Outro -->
       <div class="container" data-scroll data-scroll-section>
         <div class="py-16 lg:py-30">
-          <div class="flex flex-col lg:flex-row justify-between w-full">
-            <div class="text-m" data-scroll data-fade>
+          <div class="flex flex-col lg:flex-row justify-center w-full">
+            <div class="text-m lg:mx-10" data-scroll data-fade>
               <span data-populate="footer.ceremony.time">Ore 15.30 </span><br>
               <strong data-populate="footer.ceremony.title">Cerimonia</strong> <br>
               <span data-populate="footer.ceremony.text">Chiesa San Giorgio di Chirignago (VE)</span> <br>
               <span>Piazza S. Giorgio, 8, 30174 Venezia VE</span> <br>
               <a href="https://goo.gl/maps/196iKMu6TDMbCxu17" target="_blank" class="link-underline text-m text-green" data-populate="footer.where">Dove si trova?</a>
             </div>
-            <div class="mt-6 lg:mt-0" data-scroll data-fade>
+            <div class="mt-6 lg:mt-0 lg:mx-10" data-scroll data-fade>
               <span class="invitation-full" data-populate="footer.party.full.time">In seguito alla cerimonia</span> 
               <span class="invitation-partial" data-populate="footer.party.partial.time">Ore 21.30</span> 
               <br>
@@ -297,7 +293,7 @@
         <div class="container flex flex-col lg:flex-row lg:justify-between lg:items-center">
           <div class="order-1">Aliona: +39 346 097 4447</div>
           <div class="order-2 lg:order-3">Gianluca: +39 346 402 2636 </div>
-          <div class="order-3 lg:order-2 mt-4 lg:mt-0">❤ 25/06/2022 {<span class="days-remaining"></span> <span data-populate="footer.days">giorni</span>}</div>
+          <div class="order-3 lg:order-2 mt-4 lg:mt-0">❤ 25/06/2022 { -<span class="days-remaining"></span> <span data-populate="footer.days">giorni</span> }</div>
         </div>
       </div>
     </div>

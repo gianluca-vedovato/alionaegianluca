@@ -1,19 +1,19 @@
-export default {
+export default (isSingular) => ({
   ceremony: {
     time: 'Ora 15.30',
-    title: 'Ceremonie',
+    title: 'Cerimonie',
     text: 'Biserica San Giorgio di Chirignago (VE)'
   },
   party: {
     full: {
-      time: 'În urma ceremoniei',
-      title: 'Chitanta',
+      time: 'Aproximativ ora 17.00',
+      title: 'Ricevimento',
     },
     partial: {
       time: 'Ora 21.30',
-      title: 'Tăiere tort'
+      title: 'Tăierea tortului de nuntă'
     }
   },
   where: 'Unde este?',
   days: 'zile'
-}
+})

@@ -1,4 +1,4 @@
-export default {
+export default (isSingular) => ({
   ceremony: {
     time: 'Ore 15.30',
     title: 'Cerimonia',
@@ -6,14 +6,14 @@ export default {
   },
   party: {
     full: {
-      time: 'In seguito alla cerimonia',
+      time: 'Ore 17.00 circa',
       title: 'Ricevimento',
     },
     partial: {
       time: 'Ore 21.30',
-      title: 'Taglio della torta nuzial;e e festa di nozze'
+      title: 'Taglio della torta nuziale'
     }
   },
   where: 'Dove si trova?',
   days: 'giorni'
-}
+})

@@ -29,6 +29,16 @@ export class heroReveal {
       .to(this.heroMain, { opacity: 1, y: 0, ease: 'expo.out', duration: 2 }, 0.6)
       .to(this.heroDate, { opacity: 1, y: 0, ease: 'expo.out', duration: 2 }, 0.8)
       .to(this.heroDec, { opacity: 0.25,  ease: 'expo.out', duration: 3 }, 0.4)
+
+    
+    window.addEventListener('resize', () => {
+      const clipPathValue = window.innerWidth > 1024
+        ? '5rem'
+        : '1.5rem'
+    
+      const clipPath = `inset(${clipPathValue} ${clipPathValue} ${clipPathValue} ${clipPathValue})`
+      gsap.set(this.heroWrapper, { clipPath })
+    })
   }
 
   play () {

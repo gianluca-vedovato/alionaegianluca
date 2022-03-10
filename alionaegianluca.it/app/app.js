@@ -87,13 +87,16 @@ class App {
 
   async populate () {
     const contents = document.querySelectorAll('[data-populate]')
+    const isSingular = this.name.indexOf(' e ') < 0
 
     contents.forEach(content => {
       const keys = content.getAttribute('data-populate').split('.')
       const message = keys[0] === 'route'
         ? this.name || ''
         : keys.reduce((acc, curr) => {
-            return acc[curr]
+            return typeof acc === 'function' 
+              ? acc(isSingular)[curr]
+              : acc[curr]
           }, messages[this.locale])
       
       if (!message) {

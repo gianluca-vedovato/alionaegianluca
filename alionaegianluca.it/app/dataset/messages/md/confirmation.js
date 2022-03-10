@@ -1,12 +1,12 @@
 export default (isSingular) => ({
-  title: `Spune-ne dacă vei fi acolo`,
+  title: `Anunțați-ne dacă veți fi prezent`,
   confirm: `Iti confirmi prezenta?`,
   yes: 'Da',
   no: 'Nu',
-  adults: 'Adulti',
+  adults: 'Persoane adulte',
   children: 'Copii',
   notes: {
-    full: `Dacă aveți alergii, intoleranțe sau alte informații pe care trebuie să le cunoaștem, vă rugăm să ne anunțați aici`,
+    full: `Dacă aveți alergii sau alte informații de spus, vă rugăm să scrieți aici.`,
     partial: `Dacă mai aveți ceva să ne spuneți, nu ezitați să scrieți mai jos`
   },
   placeholder: 'Scrie orice notă aici',

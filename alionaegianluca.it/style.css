@@ -214,22 +214,6 @@ html.has-scroll-dragging {
 	@apply opacity-100 translate-y-0;
 }
 
-*[data-fade-head] {
-	@apply opacity-0 transition-opacity duration-1200;
-}
-
-*[data-fade-head=200] {
-	transition-delay: 200ms;
-}
-
-*[data-fade-head=400] {
-	transition-delay: 400ms;
-}
-
-*[data-fade-head].is-inview {
-	@apply opacity-100;
-}
-
 *[data-lines] .line {
   transition-delay: var(--delay);
   @apply whitespace-nowrap transition-all duration-1800 ease-in-out;
@@ -248,7 +232,6 @@ html.has-scroll-dragging {
   clip-path: inset(0% 0% 100% 0%);
 }
 
-*.from-center[data-reveal=image],
 *[data-reveal=clip] {
   clip-path: inset(50% 50% 50% 50%);
 }

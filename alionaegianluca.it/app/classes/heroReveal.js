@@ -21,13 +21,13 @@ export class heroReveal {
     const clipPath = `inset(${clipPathValue} ${clipPathValue} ${clipPathValue} ${clipPathValue})`
 
     gsap.set(this.heroWrapper, { clipPath: 'inset(0rem 0rem 0rem 0rem)' })
-    gsap.set([this.heroDate, this.heroMain], { y: 16 })
+    gsap.set([this.heroDate, this.heroMain], { y: 32 })
 
     this.timeline
       .to(this.heroWrapper, { clipPath, ease: 'expo.out', duration: 3.2 }, 0)
       .to(this.heroBg, { scale: 1, ease: 'expo.out', duration: 3.2 }, 0)
-      .to(this.heroMain, { opacity: 1, y: 0, ease: 'expo.out', duration: 1.6 }, 0.6)
-      .to(this.heroDate, { opacity: 1, y: 0, ease: 'expo.out', duration: 1.6 }, 0.8)
+      .to(this.heroMain, { opacity: 1, y: 0, ease: 'expo.out', duration: 2 }, 0.6)
+      .to(this.heroDate, { opacity: 1, y: 0, ease: 'expo.out', duration: 2 }, 0.8)
       .to(this.heroDec, { opacity: 0.25,  ease: 'expo.out', duration: 3 }, 0.4)
   }
 

@@ -11,6 +11,6 @@ export default (isSingular) => ({
     text: `Am fi bucuroși să vă primim pentru tăierea tortului de nuntă care va avea loc la ora 21.30. După aceea va fi muzică și un open bar, poți dansa desculț, te simți confortabil😃`,
   },
   clickHere: 'Anunțați-ne ',
-  allergens: ' dacă aveți alergii la mancare, pentru a vă  putea oferi un serviciu adecvat.',
+  allergens: ' dacă aveți intoleranțe alimentare, pentru a vă  putea oferi un serviciu adecvat.',
   showOnMap: 'Arată-mi pe hartă',
 })

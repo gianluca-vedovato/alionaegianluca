@@ -7,7 +7,7 @@ export default (isSingular) => ({
     }
   },
   partial: {
-    title: `Siamo lieti di ${isSingular ? 'riceverti' : 'ricevervi'} successivamente per il taglio della torta che si terrà alle 21.30 presso l’agriturismo Al Segnavento.`,
+    title: `Saremmo lieti di ${isSingular ? 'riceverti' : 'ricevervi'} successivamente per il taglio della torta che si terrà alle 21.30 presso l’agriturismo Al Segnavento.`,
     text: `In seguito al taglio della torta nuziale ci saranno musica e open bar, si potrà ballare a piedi nudi, mettevi comodi 😃`,
   },
   clickHere: 'Clicca qui ',

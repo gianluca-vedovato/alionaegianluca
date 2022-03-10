@@ -8,7 +8,12 @@ export class heroReveal {
     this.heroDate = document.querySelector('.hero__date')
     this.heroMain = document.querySelector('.hero__main')
 
-    this.timeline = gsap.timeline({ paused: true })
+    this.timeline = gsap.timeline({
+      paused: true,
+      onComplete: () => {
+        document.querySelector('.scroll-down-indicator').classList.remove('opacity-0')
+      }
+    })
 
     this.initTimeline()
   }

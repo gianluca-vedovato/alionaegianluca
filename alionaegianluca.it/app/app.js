@@ -35,7 +35,6 @@ class App {
     const snap = await getDoc(docRef)
     this.data = snap.data()
 
-    console.log(this.data)
     this.name = this.data.displayName
     this.type = this.data.type || 'Partial'
     this.docRef = docRef
@@ -73,8 +72,6 @@ class App {
       hero.play()
       this.scroller.update()
       this.scroller.start()
-
-      document.querySelector('.scroll-down-indicator').classList.remove('opacity-0')
     }
 
   getUrlParam (key) {

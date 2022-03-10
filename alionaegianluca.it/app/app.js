@@ -7,6 +7,7 @@ import messages from './dataset/messages'
 import { collection, doc, getDoc } from 'firebase/firestore'
 import { db } from './utils/firebase'
 import vh from './utils/vh'
+import { heroReveal } from './classes/heroReveal'
 
 const toInit = {
   form,
@@ -41,6 +42,8 @@ class App {
   }
 
   async init () {
+    const hero = new heroReveal()
+
     this.scroller = new Scroller()
     this.scroller.stop()
     vh()
@@ -67,6 +70,7 @@ class App {
         this[component] = initFunction(this)
       })
 
+      hero.play()
       this.scroller.update()
       this.scroller.start()
 

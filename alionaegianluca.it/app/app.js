@@ -23,7 +23,8 @@ class App {
       adults: 2,
       children: 2,
       confirm: false,
-      displayNme: 'Gianni'
+      displayNme: '',
+      type: undefined
     }
   }
 
@@ -33,10 +34,11 @@ class App {
     const confirmationsRef = collection(db, 'confirmations')
     const docRef = doc(confirmationsRef, this.id)
     const snap = await getDoc(docRef)
+    if (!snap) return
     this.data = snap.data()
 
-    this.name = this.data.displayName
-    this.type = this.data.type || 'Partial'
+    this.name = this.data.displayName || ''
+    this.type = this.data.type || undefined
     this.docRef = docRef
   }
 
@@ -50,11 +52,28 @@ class App {
 
     const toRemove = this.type === 'Full'
       ? document.querySelectorAll('.invitation-partial')
-      : document.querySelectorAll('.invitation-full')
+      : this.type === 'Partial'
+        ? document.querySelectorAll('.invitation-full')
+        : document.querySelectorAll('.invitation-full, .invitation-partial')
     
     toRemove.forEach(el => {
       el.parentNode.removeChild(el)
     })
+
+    console.log(this.type)
+    if (typeof this.type === 'undefined') {
+      console.log('a')
+      document.querySelectorAll('.invitation-undefined')
+        .forEach(el => {
+          el.classList.remove('hidden')
+        })
+
+      document.querySelectorAll('.don-t-show-on-undefined')
+        .forEach(el => {
+          console.log(el)
+          el.classList.add('hidden')
+        })
+    }
 
     await this.populate()
 
@@ -84,7 +103,9 @@ class App {
 
   async populate () {
     const contents = document.querySelectorAll('[data-populate]')
-    const isSingular = this.name.indexOf(' e ') < 0
+    const isSingular = this.name
+      ? this.name.indexOf(' e ') < 0
+      : true
 
     contents.forEach(content => {
       const keys = content.getAttribute('data-populate').split('.')

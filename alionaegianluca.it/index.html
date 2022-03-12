@@ -106,6 +106,7 @@
               <div ><span data-populate="intro.greeting"></span> <span class="font-bold inline-block" data-populate="route.name"></span>,</div>
               <div data-populate="intro.main.full" class="invitation-full"></div>
               <div data-populate="intro.main.partial" class="invitation-partial"></div>
+              <div data-populate="intro.main.partial" class="invitation-undefined hidden"></div>
             </div>
           </div>
         </div>
@@ -128,7 +129,7 @@
       </div>
 
       <!-- Invitation -->
-      <div class="container my-16 lg:my-32 relative z-20" data-scroll-section>
+      <div class="container my-16 lg:my-32 relative z-20 don-t-show-on-undefined" data-scroll-section>
         <div class="top-0 lg:flex items-center" data-scroll>
           <div class="grid grid-cols-1 lg:grid-cols-5 gap-24 ">
             <div class="lg:col-span-2 lg:flex flex-col justify-between">
@@ -173,7 +174,7 @@
       </div>
 
       <!-- Confirmation -->
-      <div class="relative bg-dove z-0" id="confirmation" data-scroll-section>
+      <div class="relative bg-dove z-0 don-t-show-on-undefined" id="confirmation" data-scroll-section>
         <div class="py-12 lg:py-24 from-center relative z-20" data-reveal="clip" data-scroll>
           <div class="container invitation-form relative ">
             <h2 class="font-bold text-l lg:text-xl" data-scroll data-fade data-populate="confirmation.title">Confermi la tua presenza?</h2>
@@ -284,6 +285,7 @@
               <br>
               <strong class="invitation-full" data-populate="footer.party.full.title">Ricevimento</strong>
               <strong class="invitation-partial" data-populate="footer.party.partial.title">Taglio della torta nuziale e Festa di nozze</strong>
+              <strong class="invitation-undefined hidden" data-populate="footer.party.full.title"></strong>
               <br>
               <span>Agriturismo Al Segnavento </span> <br>
               <span>Via Gatta, 76C, 30174 Venezia VE</span> <br>

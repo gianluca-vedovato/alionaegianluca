@@ -37,6 +37,7 @@ class App {
     if (!snap) return
     this.data = snap.data()
 
+    if (!this.data) return
     this.name = this.data.displayName || ''
     this.type = this.data.type || undefined
     this.docRef = docRef
@@ -62,7 +63,6 @@ class App {
 
     console.log(this.type)
     if (typeof this.type === 'undefined') {
-      console.log('a')
       document.querySelectorAll('.invitation-undefined')
         .forEach(el => {
           el.classList.remove('hidden')
